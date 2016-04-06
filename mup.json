@@ -1,0 +1,23 @@
+{
+  "servers": [
+    {
+      "host": "45.55.146.22",
+      "username": "root",
+      "password": "warehouse",
+      "env": {}
+    }
+  ],
+
+  "setupMongo": true,
+
+  "appName": "redavocado",
+  "app": "/Users/Hayden/Documents/Code/redavocado",
+
+  "env": {
+    "PORT": 80,
+    "ROOT_URL": "http://45.55.146.22"
+  },
+
+  "deployCheckWaitTime": 15,
+  "enableUploadProgressBar": true
+}

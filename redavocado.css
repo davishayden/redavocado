@@ -1,0 +1,36 @@
+/* CSS declarations go here */
+.center {
+  text-align: center;
+}
+
+.pushRight {
+  padding-left: 20px;
+}
+
+.bordered {
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.pushRightButton {
+  padding-left: 30px;
+}
+
+.innerBox {
+  padding: 10px 10px 10px 10px;
+}
+.outsideContainer {
+  padding: 2% 8% 0% 8%;
+}
+.centered {
+  margin: 0 auto;
+  display: table;
+}
+
+.between {
+    border: 3px dotted #0099CC;
+    margin-left:10px;
+    margin-right:10px;
+}
