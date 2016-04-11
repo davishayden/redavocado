@@ -21,3 +21,9 @@ insecure                # Allow all DB writes from clients (for prototyping)
 jss:flat-ui
 accounts-ui
 accounts-password
+
+maazalik:highcharts
+maazalik:highcharts-3d
+maazalik:highcharts-gauge
+
+clarencel:highcharts-drilldown

@@ -11,7 +11,7 @@
   border-style: solid;
   border-color: lightgrey;
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .pushRightButton {
@@ -27,10 +27,4 @@
 .centered {
   margin: 0 auto;
   display: table;
-}
-
-.between {
-    border: 3px dotted #0099CC;
-    margin-left:10px;
-    margin-right:10px;
 }
