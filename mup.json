@@ -3,7 +3,7 @@
     {
       "host": "45.55.146.22",
       "username": "root",
-      "password": "warehouse",
+      "password": "Dav8644!",
       "env": {}
     }
   ],
@@ -18,6 +18,6 @@
     "ROOT_URL": "http://45.55.146.22"
   },
 
-  "deployCheckWaitTime": 15,
+  "deployCheckWaitTime": 60,
   "enableUploadProgressBar": true
 }
