@@ -1,6 +1,4 @@
-//import Highcharts from 'highcharts';
-$(function () {
-
+function buildContainer3() {
     $('#container3').highcharts({
 
         chart: {
@@ -56,4 +54,8 @@ $(function () {
         }]
 
     });
-});
+}
+
+Template.conversionGraph.rendered = function() {
+    buildContainer3();
+}

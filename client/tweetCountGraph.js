@@ -1,4 +1,4 @@
-$(function () {
+function buildContainer2() {
     $('#container2').highcharts({
         chart: {
             type: 'line'
@@ -34,4 +34,8 @@ $(function () {
         }
       ]
     });
-});
+}
+
+Template.tweetCountGraph.rendered = function() {
+    buildContainer2();
+}

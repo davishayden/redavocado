@@ -30,3 +30,5 @@ clarencel:highcharts-drilldown
 standard-minifier-css
 standard-minifier-js
 highcharts:highcharts-meteor
+less
+iron:router

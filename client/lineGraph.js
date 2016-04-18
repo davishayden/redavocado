@@ -1,4 +1,5 @@
-$(function () {
+//$(function () {
+function buildContainer1() {
     $('#container1').highcharts({
         chart: {
             type: 'line'
@@ -33,4 +34,8 @@ $(function () {
             data: [25866, 14054, 0, 2626,0,15028,2830,48671,90375, 191938, 175274, 175761, 139134, 333262, 266981, 239445, 207517, 131442, 82716, 130387, 115457, 118035, 82420, 41436]
         }]
     });
-});
+//});
+}
+Template.lineGraph.rendered = function() {
+    buildContainer1();
+}

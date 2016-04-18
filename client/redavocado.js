@@ -8,3 +8,9 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+Template.navHeader.events({
+  'click .navbar-brand': function() {
+    Router.go('/home');
+  }
+});
