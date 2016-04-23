@@ -5,9 +5,12 @@ Router.route('/home', function() {
 Router.route('/post/:_id', function () {
   //var item = Items.findOne({_id: this.params._id});
   var item = this.params._id;
-  console.log(item);
   if(item == "1") {
     this.render('gvsuTwitter');
+  } else if(item == "2") {
+    this.render('gentexStudy');
+  } else if(item == "3") {
+    this.render('venmoStudyMain')
   }
 });
 
