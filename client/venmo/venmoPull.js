@@ -8,7 +8,7 @@ function buildContainer() {
               text: 'Uber vs. Lyft Mentions'
           },
           subtitle: {
-              text: '200,000 payments'
+              text: '20,000 payments'
           },
           xAxis: {
               categories: [
