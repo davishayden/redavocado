@@ -40,11 +40,11 @@ function buildContainer() {
               name: 'Pizza',
               data: [708]
 
-          }, {
+          }/*, {
               name: 'Salad',
               data: [559]
 
-          } , {
+          }*/ , {
               name: 'Thai',
               data: [360]
 
@@ -76,7 +76,7 @@ function buildContainer() {
               name: 'Pho',
               data: [164]
 
-          } 
+          }
         ]
       });
 }
