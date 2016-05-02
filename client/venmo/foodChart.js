@@ -25,7 +25,7 @@ function buildContainer() {
           tooltip: {
               headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
               pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                  '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                  '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
               footerFormat: '</table>',
               shared: true,
               useHTML: true
@@ -38,43 +38,39 @@ function buildContainer() {
           },
           series: [{
               name: 'Pizza',
-              data: [708]
-
-          }/*, {
-              name: 'Salad',
-              data: [559]
-
-          }*/ , {
-              name: 'Thai',
-              data: [360]
+              data: [4193]
 
           } , {
+              name: 'Beer',
+              data: [3116]
+
+          } , {
+              name: 'Thai',
+              data: [1928]
+
+          }
+          , {
+              name: 'Brunch',
+              data: [1841]
+
+          }
+          , {
               name: 'BBQ',
-              data: [274]
+              data: [1724]
+
+          }
+          , {
+              name: 'Chicken',
+              data: [1587]
 
           }
           , {
               name: 'Sushi',
-              data: [241]
-
-          }
-          , {
-              name: 'Boba',
-              data: [202]
-
-          }
-          , {
-              name: 'Chipotle',
-              data: [190]
-
-          }
-          , {
-              name: 'Beans',
-              data: [183]
+              data: [972]
 
           } , {
-              name: 'Pho',
-              data: [164]
+              name: 'Chipotle',
+              data: [885]
 
           }
         ]

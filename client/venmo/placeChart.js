@@ -38,11 +38,11 @@ function buildContainer() {
           },
           series: [{
               name: 'Coachella',
-              data: [426]
+              data: [1784]
 
           }, {
               name: 'Vegas',
-              data: [257]
+              data: [1392]
 
           }]
       });

@@ -8,7 +8,7 @@ function buildContainer() {
               text: 'Uber vs. Lyft Mentions'
           },
           subtitle: {
-              text: '20,000 payments'
+              text: '1,000,000 payments'
           },
           xAxis: {
               categories: [
@@ -38,11 +38,13 @@ function buildContainer() {
           },
           series: [{
               name: 'Uber',
-              data: [1318]
-
+              data: [12024]
           }, {
               name: 'Lyft',
-              data: [282]
+              data: [2535]
+          }, {
+              name: 'Taxis & Cabs',
+              data: [2262]
 
           }]
       });

@@ -3,14 +3,14 @@
   <h3 class="center">Venmo Public Payment Messages</h3>
   <div class="container">
     <div><p>
-      The popular payment app, Venmo, allows users to send money from their bank account to another users for free. If you have never used it you should. Venmo payments are public by default meaning users can see every time another user pays someone. They don't see the amount, but rather a message indicating what the payment was for. Venmo has a view in its' app that allows all users to see all public payments from all users from their app. It is overflowing with payments as Venmo process over $2.1 billion dollars.
+      The popular payment app, Venmo, allows users to send money from their bank account to another users for free. Venmo payments are public by default (users can opt to hide payments but many as you will see are left public) meaning users can see every time another user pays someone. They don't see the amount, but rather a message indicating what the payment was for. Venmo has a screen in its' app that allows all users to see all public payments from all users from their app. It is overflowing with payments as Venmo process over $2.1 billion dollars in one of their recent quarterly reports. I wanted to know what people were paying for so I gathered 1,000,000 transactions (using their public API) between 4/22/2016 and 4/26/2016. I then sifted through the data to find any interesting patterns and trends.
     </p></div>
     <div class="row">
     <div class="col-sm-6">
       {{> venmoPull}}
     </div>
     <div class="col-sm-6">
-  <p> The chart to the left shows the massive difference in people paying others for using Uber. We can draw from this two important things with the first being Uber is the dominate ridesharing for Venmo users, which may be a younger crowd. Second is that the amount of people in an Uber car could be signficently higher than the amount of rides given. Of course this is expected, but to the magnitude the chart shows I would assume is higher than public perception. </p>
+  <p>The first thing I did was breakout every word/emoji used in a payment message and totaled all of them up for the entire dataset. The first interesting trend I spoted was the difference the amount of times that Uber was mentioned over Lyft and can/taxi. The chart shows how big of a difference (nearly 5x) Uber is mentioned over Lyft or cabs.  Although this data is no where near 100% accurate, we can see that Venmo users prefer Uber over Lyft or cabs....by an extreme amount.</p>
     </div>
   </div>
   <div class="row">
@@ -47,4 +47,47 @@
 </div>
 </div>
 </div>
+<meta charset="utf-8">
+<canvas width="960" height="960"></canvas>
+<script src="https://d3js.org/d3.v4.0.0-alpha.33.min.js"></script>
+<script>
+
+var canvas = document.querySelector("canvas"),
+    context = canvas.getContext("2d"),
+    width = canvas.width,
+    height = canvas.height,
+    tau = 2 * Math.PI;
+
+var nodes = d3.range(1000).map(function(i) {
+  return {
+    r: Math.random() * 14 + 4
+  };
+});
+
+var simulation = d3.forceSimulation(nodes)
+    .drag(0.2)
+    .force("x", d3.forceX().strength(0.002))
+    .force("y", d3.forceY().strength(0.002))
+    .force("collide", d3.forceCollide().radius(function(d) { return d.r + 0.5; }).iterations(2))
+    .on("tick", ticked);
+
+function ticked() {
+  context.clearRect(0, 0, width, height);
+  context.save();
+  context.translate(width / 2, height / 2);
+
+  context.beginPath();
+  nodes.forEach(function(d) {
+    context.moveTo(d.x + d.r, d.y);
+    context.arc(d.x, d.y, d.r, 0, tau);
+  });
+  context.fillStyle = "#ddd";
+  context.fill();
+  context.strokeStyle = "#333";
+  context.stroke();
+
+  context.restore();
+}
+
+</script>
 </template>

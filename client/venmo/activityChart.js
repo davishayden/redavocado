@@ -37,21 +37,136 @@ function buildContainer() {
               }
           },
           series: [{
-              name: 'Formal',
-              data: [519]
+              name:   '🍕',
+              data: [12102]
 
           }, {
-              name: 'Golf',
-              data: [180]
+              name: ' 🍻',
+              data: [8503]
 
           }, {
-              name: 'Poker',
-              data: [146]
+              name: ' 🍴',
+              data: [5991]
+
+          }, {
+              name: ' 🍺',
+              data: [5612]
+
+          }, {
+              name: ' 🚕',
+              data: [4599]
+
+          }, {
+              name: '⛽',
+              data: [4593]
+
+          }, {
+              name: '🏠💸',
+              data: [3945]
+
+          }, {
+              name: '🍷',
+              data: [3930]
 
           }]
       });
 }
 
+
+function buildContainer1() {
+  $('#container4').highcharts({
+
+       chart: {
+           type: 'bubble',
+           plotBorderWidth: 1,
+           zoomType: 'xy'
+       },
+
+       legend: {
+           enabled: false
+       },
+
+       title: {
+           text: 'Sugar and fat intake per country'
+       },
+
+       subtitle: {
+           text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+       },
+
+       xAxis: {
+           gridLineWidth: 1,
+           title: {
+               text: 'Daily fat intake'
+           },
+           labels: {
+               format: '{value} gr'
+           }
+       },
+
+       yAxis: {
+           startOnTick: false,
+           endOnTick: false,
+           title: {
+               text: 'Daily sugar intake'
+           },
+           labels: {
+               format: '{value} gr'
+           },
+           maxPadding: 0.2,
+           plotLines: [{
+               color: 'black',
+               dashStyle: 'dot',
+               width: 2,
+               value: 50,
+               label: {
+                   align: 'right',
+                   style: {
+                       fontStyle: 'italic'
+                   },
+                   text: 'Safe sugar intake 50g/day',
+                   x: -10
+               },
+               zIndex: 3
+           }]
+       },
+
+       tooltip: {
+           useHTML: true,
+           headerFormat: '<table>',
+           pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>'+
+               '<tr><th>Mentions:</th><td>{point.z}</td></tr>',
+           footerFormat: '</table>',
+           followPointer: true
+       },
+
+       plotOptions: {
+           series: {
+               dataLabels: {
+                   enabled: true,
+                   format: '{point.name}'
+               }
+           }
+       },
+
+       series: [{
+           data: [
+               { x: 10, y: 100, z: 12102, name: '🍕', country: '🍕' },
+               { x: 170, y: 100, z: 8503, name: '🍻', country: '🍻' },
+               { x: 300, y: 100, z: 5991, name: '🍴', country: '🍴' },
+               { x: 400, y: 100, z: 5612, name: '🍺', country: '🍺' },
+               { x: 500, y: 100, z: 4599, name: ' 🚕', country: '🚕' },
+               { x: 600, y: 100, z: 4593, name: '⛽', country: '⛽' },
+               { x: 700, y: 100, z: 3945, name: '🏠💸', country: '🏠💸' },
+               { x: 800, y: 100, z: 3930, name: '🍷', country: '🍷' },
+               { x: 900, y: 100, z: 3504, name: ' 🎉', country: '🎉' }
+           ]
+       }]
+
+   });
+}
+
+
 Template.activityChart.rendered = function() {
-    buildContainer();
+    buildContainer1();
 }

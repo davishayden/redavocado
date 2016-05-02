@@ -37,30 +37,40 @@ function buildContainer() {
               }
           },
           series: [{
+              name: 'Cash',
+              data: [2438]
+
+          }, {
               name: 'Comcast',
-              data: [289]
+              data: [1582]
+
+          }, {
+              name: 'Costco',
+              data: [1436]
 
           }, {
               name: 'Drugs',
-              data: [196]
+              data: [829]
 
           }, {
               name: 'Bae',
-              data: [150]
+              data: [651]
 
           }, {
-              name: 'Strippers',
-              data: [116]
+              name: 'Amazon',
+              data: [542]
 
           }, {
-              name: 'Booty',
-              data: [108]
+              name: 'Starbucks',
+              data: [378]
 
           }
 
         ]
       });
 }
+
+
 
 Template.otherChart.rendered = function() {
     buildContainer();
