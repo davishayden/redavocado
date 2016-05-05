@@ -32,7 +32,7 @@ function buildContainer() {
           },
           plotOptions: {
               column: {
-                  pointPadding: 0.2,
+                  pointPadding: 0.4,
                   borderWidth: 0
               }
           },
@@ -87,20 +87,21 @@ function buildContainer1() {
        },
 
        title: {
-           text: 'Sugar and fat intake per country'
+           text: 'Emoji Mentions'
        },
 
        subtitle: {
-           text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+           text: '1,000,000 mentions'
        },
 
        xAxis: {
-           gridLineWidth: 1,
+           gridLineWidth: 0,
            title: {
-               text: 'Daily fat intake'
+               text: ''
            },
            labels: {
-               format: '{value} gr'
+                enabled: false,
+               format: ''
            }
        },
 
@@ -108,10 +109,11 @@ function buildContainer1() {
            startOnTick: false,
            endOnTick: false,
            title: {
-               text: 'Daily sugar intake'
+               text: ''
            },
            labels: {
-               format: '{value} gr'
+                enabled: false,
+               format: '{value}'
            },
            maxPadding: 0.2,
            plotLines: [{
@@ -124,7 +126,7 @@ function buildContainer1() {
                    style: {
                        fontStyle: 'italic'
                    },
-                   text: 'Safe sugar intake 50g/day',
+                   text: '',
                    x: -10
                },
                zIndex: 3

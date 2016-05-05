@@ -1,50 +1,62 @@
 <template name="venmoStudyMain">
-  {{> navHeader}}
-  <h3 class="center">Venmo Public Payment Messages</h3>
-  <div class="container">
-    <div><p>
-      The popular payment app, Venmo, allows users to send money from their bank account to another users for free. Venmo payments are public by default (users can opt to hide payments but many as you will see are left public) meaning users can see every time another user pays someone. They don't see the amount, but rather a message indicating what the payment was for. Venmo has a screen in its' app that allows all users to see all public payments from all users from their app. It is overflowing with payments as Venmo process over $2.1 billion dollars in one of their recent quarterly reports. I wanted to know what people were paying for so I gathered 1,000,000 transactions (using their public API) between 4/22/2016 and 4/26/2016. I then sifted through the data to find any interesting patterns and trends.
-    </p></div>
-    <div class="row">
-    <div class="col-sm-6">
-      {{> venmoPull}}
-    </div>
-    <div class="col-sm-6">
-  <p>The first thing I did was breakout every word/emoji used in a payment message and totaled all of them up for the entire dataset. The first interesting trend I spoted was the difference the amount of times that Uber was mentioned over Lyft and can/taxi. The chart shows how big of a difference (nearly 5x) Uber is mentioned over Lyft or cabs.  Although this data is no where near 100% accurate, we can see that Venmo users prefer Uber over Lyft or cabs....by an extreme amount.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-    <p> The date that I pulled this data was during the Coachella period, so the fact that this shows up is not suprising. It also appears that Vegas is a mainstay as a Venmo user destination.</p>
-    </div>
-  <div class="col-sm-6">
-    {{> placeChart}}
-  </div>
+    {{> navHeader}}
+    <h3 class="center">Venmo Public Payment Messages</h3>
+    <div class="container middle">
+        <div>
+            <p>
+                The popular payment app, Venmo, allows users to send money from their bank account to another users for free. Venom payments are public by default (users can opt to hide payments but many, as you will see, are left public) meaning users can see every
+                time another user pays someone. They don’t see the amount, but rather a message indicating what the payment was for. The Venmo fee is overflowing with payments as Venmo processed over $2.1 billion dollars in one of their recent quarterly
+                reports. I wanted to know what people were paying for so I gathered 1,000,000 transactions (using their public API) between 4/22/2016 and 4/26/2016. I then sifted through the data to find any interesting patterns and trends.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                {{> venmoPull}}
+            </div>
+            <div class="col-sm-6">
+                <p>The first thing I did was breakout every word/emoji used in a payment message and totaled all of them up for the entire dataset. The first interesting trend I spotted was the difference between the amount of times that Uber was mentioned
+                    over Lyft or cab/taxi. The chart shows how big of a difference (nearly 4x) Uber is mentioned over Lyft or cabs. Although payment messages can sometimes be nothing related to what the payment actually for it would seem odd that in this
+                    case people would be lying about about which ride-sharing service they were using. From this we can see that Venmo users prefer Uber over Lyft/cabs….by an extreme amount.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {{> placeChart}}
+                <p class=""> The date that I pulled this data was during Coachella time, so the fact that this shows up is not surprising. It also appears that Vegas is a travel mainstay for Venmo user destination.</p>
+            </div>
+            <!--<div class="col-sm-6">
+                {{> placeChart}}
+            </div>-->
 
-</div>
-<div class="row">
-<div class="col-sm-6">
-  {{> otherChart}}
-</div>
-<div class="col-sm-6">
-  <p> To the left are certain Venmo terms that I found interesting, funny, or odd.  Comcast might be neither of these and bae might be the most annoying terms used, but none the less it appears that the high Vegas count in the previous graph may be correlated with a few terms on this graph. </p>
-</div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <!--<p> The chart to the left shows the massive difference in people paying others for using Uber. We can draw from this two important things with the first being Uber is the dominate ridesharing for Venmo users, which may be a younger crowd. Second is that the amount of people in an Uber car could be signficently higher than the amount of rides given. Of course this is expected, but to the magnitude the chart shows I would assume is higher than public perception. </p> -->
-  </div>
-<div class="col-sm-6">
-  {{> foodChart}}
-</div>
-</div>
-<div class="row">
-<div class="col-sm-6">
-  {{> activityChart}}
-</div>
-<div class="col-sm-6">
-  <!--<p> The chart to the left shows the massive difference in people paying others for using Uber. We can draw from this two important things with the first being Uber is the dominate ridesharing for Venmo users, which may be a younger crowd. Second is that the amount of people in an Uber car could be signficently higher than the amount of rides given. Of course this is expected, but to the magnitude the chart shows I would assume is higher than public perception. </p> -->
-</div>
-</div>
-</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                {{> otherChart}}
+            </div>
+            <div class="col-sm-6">
+                <p>This chart contains certain Venmo terms that I found interesting or odd. I found cash interesting because it shows how payment apps have turned humans into peer-to-peer ATM’s. It would probably be a correct assumption that Drugs are not
+                    actually drug related transactions. However, you can assume it would be much easier to sell anything when all you need is an app not a large quantity of cash on hand. Amazon showing up so many times probably indicates the sharing of
+                    Amazon Prime memberships.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                {{> activityChart}}
+                <p class="">
+                    While doing this study I found that many payment messages were just emojis. There were some pretty elaborate combinations but to make this chart I broke out the top 9 emojis by mention. Nothin on this list should shock anyone and reinforces that pizza
+                    and beer are Venmo users food and drink of choice.</p>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+              {{> foodChart}}
+          </div>
+            <div class="col-sm-6">
+                <p>
+                    This graph covers what sort of food Venmo users are paying each other for. Pizza and beer are probably a no-brainer considering the common perception of Venmo users is that they are of a younger age demographic. However, it looks like a great time to
+                    start up a Thai or brunch restaurant. By collecting more data over time trends could be uncovered about what people are eating at different times of the week or year.</p>
+            </div>
+        </div>
+    </div>
 </template>

@@ -33,3 +33,11 @@
   margin: 0 auto;
   display: table;
 }
+
+.middle {
+  width: 80%;
+}
+
+.centerSmall {
+  padding-top: 20%;
+}
