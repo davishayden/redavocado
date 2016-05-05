@@ -8,7 +8,7 @@ function buildContainer() {
               text: 'Activity Mentions'
           },
           subtitle: {
-              text: '20,000 payments'
+              text: '1,000,000 payments'
           },
           xAxis: {
               categories: [
@@ -91,7 +91,7 @@ function buildContainer1() {
        },
 
        subtitle: {
-           text: '1,000,000 mentions'
+           text: '1,000,000 payments'
        },
 
        xAxis: {

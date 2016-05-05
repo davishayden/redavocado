@@ -8,7 +8,7 @@ function buildContainer() {
               text: 'Food Mentions'
           },
           subtitle: {
-              text: '20,000 payments'
+              text: '1,000,000 payments'
           },
           xAxis: {
               categories: [
