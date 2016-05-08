@@ -7,28 +7,66 @@
                 The popular payment app, Venmo, allows users to send money from their bank account to another users for free. Venom payments are public by default (users can opt to hide payments but many, as you will see, are left public) meaning users can see every
                 time another user pays someone. They don’t see the amount, but rather a message indicating what the payment was for. The Venmo fee is overflowing with payments as Venmo processed over $2.1 billion dollars in one of their recent quarterly
                 reports. I wanted to know what people were paying for so I gathered 1,000,000 transactions (using their public API) between 4/22/2016 and 4/26/2016. I then sifted through the data to find any interesting patterns and trends.
+
             </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {{> timeChart}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                The first thing I did was look at transactions over time. The chart I created showed an oddly smooth drop-off as you progress from midnight to the morning hours. Based on the near flat slope of the line between 3PM and 9PM it would appear users equally
+                likely to pay each other during this timeframe.
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
                 {{> venmoPull}}
             </div>
             <div class="col-sm-6">
-                <p>The first thing I did was breakout every word/emoji used in a payment message and totaled all of them up for the entire dataset. The first interesting trend I spotted was the difference between the amount of times that Uber was mentioned
-                    over Lyft or cab/taxi. The chart shows how big of a difference (nearly 4x) Uber is mentioned over Lyft or cabs. Although payment messages can sometimes be nothing related to what the payment actually for it would seem odd that in this
-                    case people would be lying about about which ride-sharing service they were using. From this we can see that Venmo users prefer Uber over Lyft/cabs….by an extreme amount.</p>
+                <p>I broke out every word/emoji used in a payment message and totaled all of them up for the entire dataset. The first interesting trend I spotted was the difference between the amount of times that Uber was mentioned over Lyft or cab/taxi
+                    (the three categories included all mentions of terms related such as ubers, lyfttt, or taxis.). The chart shows how big of a difference (nearly 5x) Uber is mentioned over Lyft or cabs. Although payment messages can sometimes be nothing
+                    related to what the payment actually for it would seem odd that in this case people would be lying about which ridesharing service they were using. From this we can see that Venmo users prefer Uber over Lyft/cab by an extreme amount.
+                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                {{> placeChart}}
-                <p class=""> The date that I pulled this data was during Coachella time, so the fact that this shows up is not surprising. It also appears that Vegas is a travel mainstay for Venmo user destination.</p>
+                {{> rideShareTime}}
             </div>
-            <!--<div class="col-sm-6">
-                {{> placeChart}}
-            </div>-->
-
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>We can see that ridesharing mentions are most active between the hours of 3PM and 3AM as you might expect when individuals not working (remember this dataset includes both weekday and weekends and users may work on any day of the week)
+                    and potentially going out of their workplace or homes. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {{> rideShareTimePercent}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>The above chart shows how mentions of ride sharing companies relate to overall mentions at any hour of the day. I found it interesting that Uber mentions are the highest percentage of total mentions at 9AM. My guess would be this is people
+                    paying others for the night before rather than sharing an Uber during a morning commute.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {{> rideShareTimeRelative}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p> This chart compares mentions of a ridesharing company to that individual ridesharing companies overall mentions by time. We see that of people paying for a taxi that more create a charge late at night and into the morning than in the afternoon
+                    or evening. This is interesting because maybe when you take a cab an individual is more likely to "feel" the effect of paying (resulting in them wanting to get the money from those sharing the taxi with them quicker) than when taking
+                    an Uber. I think I would agree with this because when I take an Uber I don't ever think about how much it costs, I just get out of the vehicle and go about my business.</p>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-sm-6">
                 {{> otherChart}}
@@ -36,7 +74,8 @@
             <div class="col-sm-6">
                 <p>This chart contains certain Venmo terms that I found interesting or odd. I found cash interesting because it shows how payment apps have turned humans into peer-to-peer ATM’s. It would probably be a correct assumption that Drugs are not
                     actually drug related transactions. However, you can assume it would be much easier to sell anything when all you need is an app not a large quantity of cash on hand. Amazon showing up so many times probably indicates the sharing of
-                    Amazon Prime memberships.</p>
+                    Amazon Prime memberships.
+                </p>
             </div>
         </div>
 
@@ -44,8 +83,9 @@
             <div class="col-sm-12">
                 {{> activityChart}}
                 <p class="">
-                    While doing this study I found that many payment messages were just emojis. There were some pretty elaborate combinations but to make this chart I broke out the top 9 emojis by mention. Nothin on this list should shock anyone and reinforces that pizza
-                    and beer are Venmo users food and drink of choice.</p>
+                    While doing this study I found that many payment messages were just emojis. There were some pretty elaborate combinations but to make this chart I broke out the top 9 emojis by mention. Nothing on this list should shock anyone and reinforces that pizza
+                    and beer are Venmo users food and drink of choice.
+                </p>
             </div>
         </div>
         <div class="row">
@@ -55,17 +95,28 @@
             <div class="col-sm-6">
                 <p>
                     This graph covers what sort of food Venmo users are paying each other for. Pizza and beer are probably a no-brainer considering the common perception of Venmo users is that they are of a younger age demographic. However, it looks like a great time to
-                    start up a Thai or brunch restaurant. By collecting more data over time trends could be uncovered about what people are eating at different times of the week or year.</p>
+                    start up a Thai or brunch restaurant. By collecting more data over time trends could be uncovered about what people are eating at different times of the week or year
+                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                {{> timeChart}}
+                {{> placeChart}}
+                <p class=""> The date that I pulled this data was during Coachella time, so the fact that this shows up is not surprising. It also appears that Vegas is a travel mainstay for Venmo user destination.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                The last thing I did was look at transactions over time. The chart I created showed an oddly smooth dropoff as you progress from midnight to the morning hours. Based on the the near flat slope of the line between 3PM and 9PM it would appear users equally likely to pay eachother during this timeframe. 
+                <p>
+                    The most important thing that I got from checking out all this data is that there are trends people follow and the data is out there. It's tough to understand when people talk about Uber vs. Lyft and how they are doing what to believe. When consulting
+                    this "third party" data source it is obvious by simply looking at a chart: Uber is dominating ridesharing. None of this data can be guaranteed to be accurate but it gives us a look into what people are paying for and when they are
+                    paying for it.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    Hayden</p>
             </div>
         </div>
     </div>

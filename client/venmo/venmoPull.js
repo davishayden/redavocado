@@ -44,7 +44,7 @@ function buildContainer() {
               data: [2535]
           }, {
               name: 'Taxis & Cabs',
-              data: [2262]
+              data: [2251]
 
           }]
       });
